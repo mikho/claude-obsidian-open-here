@@ -1,0 +1,22 @@
+{
+  "name": "claude-folder-launcher",
+  "version": "1.1.0",
+  "description": "Obsidian plugin: start Claude Code in a folder from the right-click menu",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikho/claude-obsidian-open-here.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.20.0",
+    "obsidian": "latest",
+    "typescript": "^5.4.0"
+  }
+}
