@@ -255,6 +255,7 @@ export default class ClaudeFolderLauncher extends Plugin {
 
     const profile = { ...base, args, name: `Claude: ${title}` };
 
+    // Always a new tab, never the active one
     const leaf = this.app.workspace.getLeaf("tab");
     await leaf.setViewState({
       type: "terminal:terminal",
@@ -270,6 +271,9 @@ export default class ClaudeFolderLauncher extends Plugin {
         },
       },
     });
+    // Pin the tab: Obsidian opens files in the active tab unless it is pinned,
+    // so without this, clicking a note would replace the Claude terminal.
+    leaf.setPinned(true);
     this.app.workspace.setActiveLeaf(leaf, { focus: true });
     return true;
   }

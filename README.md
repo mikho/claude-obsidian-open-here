@@ -12,7 +12,7 @@ Desktop only. Built and tested on macOS.
 2. The plugin works out the folder's absolute path on disk.
 3. It looks in `~/.claude/projects/` for sessions that belong to that folder. Claude Code keeps each folder's sessions as `.jsonl` files in a directory named after the path, with every character other than letters and digits replaced by `-`. If no such directory exists, the plugin reads the start of each session file and compares its `"cwd"` field with the folder path.
 4. It builds the command: `claude --continue` when a session exists, plain `claude` when none does, plus any extra arguments from the settings.
-5. It opens a new tab from the [Terminal](https://github.com/polyipseity/obsidian-terminal) plugin in that folder and runs the command in your shell as a login shell, so `claude` is found the same way as in your normal terminal. When Claude exits, the shell stays open in the tab.
+5. It opens a new tab from the [Terminal](https://github.com/polyipseity/obsidian-terminal) plugin in that folder and runs the command in your shell as a login shell, so `claude` is found the same way as in your normal terminal. When Claude exits, the shell stays open in the tab. The tab is pinned, so opening a note puts it in a new tab instead of replacing the Claude session.
 
 Without the Terminal plugin, it opens Terminal.app or iTerm2 instead (Windows Terminal or `cmd` on Windows, `x-terminal-emulator` on Linux).
 

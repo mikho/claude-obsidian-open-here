@@ -243,6 +243,7 @@ var ClaudeFolderLauncher = class extends import_obsidian.Plugin {
         }
       }
     });
+    leaf.setPinned(true);
     this.app.workspace.setActiveLeaf(leaf, { focus: true });
     return true;
   }
